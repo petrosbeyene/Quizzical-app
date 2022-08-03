@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function(){
+export default function AnswerButton(props){
     return(
         <div>
-            <button>choice #1</button>
+            <button>{props.value}</button>
         </div>
     )
 }

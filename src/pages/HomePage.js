@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HomePage(){
+export default function HomePage(props){
 
     // fetch("https://opentdb.com/api.php?amount=10&category=21&type=multiple")
     //     .then(res => res.json())
@@ -11,7 +11,7 @@ export default function HomePage(){
         <div>
             <h1>Quizzical</h1>
             <p>We are the best platform to test your general knowledge!</p>
-            <button>Start quiz</button>
+            <button onClick={props.showResult}>Start quiz</button>
         </div>
     )
 }
