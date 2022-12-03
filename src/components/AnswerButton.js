@@ -9,7 +9,7 @@ export default function AnswerButton(props){
         onClick = {props.chooseAnswer}
         >
             <p>{props.isChosen ? 'true': 'false'}</p>
-            <button>{props.value}</button>
+            <button disabled={props.disabled}>{props.value}</button>
         </div>
     )
 }
