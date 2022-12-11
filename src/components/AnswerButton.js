@@ -1,15 +1,28 @@
 import React from "react";
 
 export default function AnswerButton(props){
-    const styles = {
-        backgroundColor: props.isChosen ? 'Green' : null
+    var bg_color = ''
+    const isCorrectAnswer = props.value === props.correct_answer
+    if(props.check_ans){
+        if(isCorrectAnswer){
+            bg_color = 'Green'
+        }else if(props.isChosen && !isCorrectAnswer){
+            bg_color = 'Red'
+        }
+    }else {
+        bg_color = props.isChosen ? 'Blue' : null
     }
+
+    const styles = {
+        backgroundColor: bg_color
+    }
+
+    
     return(
-        <div style={styles}
+        <div
         onClick = {props.chooseAnswer}
         >
-            <p>{props.isChosen ? 'true': 'false'}</p>
-            <button disabled={props.disabled}>{props.value}</button>
+            <button style={styles} disabled={props.disabled}>{props.value}</button>
         </div>
     )
 }
